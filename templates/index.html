@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block Title %}
+	{{webname}}-{{judul}}
+{% endblock Title %}
+
+{% block contents %}
+
+
+<div class="desktop">
+
+    <div class="cntn">
+        <h1 id="judul">{{judul}}</h1>
+        <p>{{webby}}</p>
+        <p>Open file</p>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="myfile">
+            <button type="submit">Upload</button>
+        </form>
+
+        {% if Score_by_different %}
+            <p>Score by different: {{ Score_by_different }}%</p>
+        {% endif %}
+    </div>
+
+</div>
+
+<div class="mobile">
+    <h1 id="judul">{{judul}}</h1>
+
+    <div>
+        <h1>{{content}}</h1>
+    </div>
+</div>
+
+
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script src="{% static 'js/index.js' %}"></script>
+
+{% endblock contents %}
