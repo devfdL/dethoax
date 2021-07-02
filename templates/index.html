@@ -11,19 +11,38 @@
 
 <div class="desktop">
 
-    <div class="cntn">
+    <div class="topbar">
         <h1 id="judul">{{judul}}</h1>
-        <p>{{webby}}</p>
-        <p>Open file</p>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <input type="file" name="myfile">
-            <button type="submit">Upload</button>
+            <input id="fileinput" type="file" name="myfile" onchange="fileinp()">
+            <button id="filesubmit" type="submit" >Upload</button>
         </form>
+        <p id="demo"></p>
+    </div>
+
+
+    <div class="cntn">
 
         {% if Score_by_different %}
-            <p>Score by different: {{ Score_by_different }}%</p>
+        <div class="output">
+            <div class="output-l">
+                <h1>your pic</h1>
+                <p>{{text_inp}}</p>
+            </div>
+            <div class="output-r">
+                <h1>Result</h1>
+                <p>{{result}}</p>
+            </div>
+            <h1 id="scr_dif">Score by different: {{ Score_by_different }}%</h1>
+        </div>
         {% endif %}
+        
+        <div class="cntn-l">
+            <h1>HOAX</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        
     </div>
 
 </div>
@@ -36,7 +55,7 @@
     </div>
 </div>
 
-
+<script type="text/javascript"></script>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <script src="{% static 'js/index.js' %}"></script>
 

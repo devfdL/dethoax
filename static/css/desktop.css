@@ -23,6 +23,7 @@
   /* width */
 ::-webkit-scrollbar {
     width: 8px;
+    border-radius: 10px;
   }
   
   /* Track */
@@ -32,12 +33,12 @@
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgb(133, 5, 5); 
+    background: rgb(165, 165, 165); 
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(105, 3, 3); 
+    background: rgb(165, 165, 165); 
   }
 
 /* Medium Devices, Desktops */
@@ -50,21 +51,141 @@
     /* Styles */
     body{
         position: fixed;
-        background-color: #293D73;
-        color: white;
+        background-color: white;
+        color: black;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
-    .cntn{
-        position: fixed;
-        width: 80%;
-        height: 70%;
-        top: 15%;
-        border: 1px solid white;
-        left: 10%;
-        text-align: center;
+    .topbar{
+      position: fixed;
+      top: 0;
+      left: 0;
+      /* box-shadow: 1px 1px 10px #20202077; */
+      width: 100vw;
+      padding-left: 30px;
+      padding-right: 30px;
+      height: 50px; 
+      z-index: 99999999999;   
     }
 
+    #judul{
+      position: absolute;
+      top: -10px;
+      font-size: 25px;
+
+    }
+
+    #fileinput{
+      position: absolute;
+      right: 100px;
+      height: 40px;
+      top: 10px;
+      color: transparent;
+    }
+
+    #demo{
+      position: absolute;
+      right: 100px;
+      height: 40px;
+      top: 50px;
+    }
+
+    #fileinput:focus{
+      outline: none;
+    }
+
+    #fileinput::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+
+    #fileinput::before{
+      content: 'Select some files';
+      color: white;
+      border: 1px solid black;
+      padding: 8px 20px;
+      background-color: black;
+      box-shadow: 1px 1px 10px #20202077;
+    }
+
+    #fileinput::before:hover{
+      background-color: white;
+      color: black;
+      border: 1px solid black;
+    }
+
+    #filesubmit{
+      position: absolute;
+      right: 80px;
+      top: 7px;  
+      padding: 7px 20px;
+      background-color: black;
+      color: white;
+      border: transparent;
+      box-shadow: 1px 1px 10px #20202077;
+    }
+
+    #filesubmit:hover{
+      background-color: white;
+      color: black;
+      border: 1px solid black;
+    }
+
+    .cntn{
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      overflow-y: auto;
+    }
+
+    .cntn-l{
+      position: relative;
+      width: 40vw;
+      height: 50vh;
+      top: 25vh;
+      left: 5vw;
+      padding: 20px;
+    }
+
+    .cntn-l h1{
+      font-size: 70px;
+    }
+
+    .output{
+      position: relative;
+      width: 90vw;
+      height: 70vh;
+      top: 15vh;
+      left: 5vw;
+      box-shadow: 1px 1px 10px #20202077;
+    }
+
+    #scr_dif{
+      position: absolute;
+      bottom: 10px;
+      left: 20px;
+      font-size: 20px;
+    }
+
+    .output-l{
+      position: absolute;
+      width: 50%;
+      height: 90%;
+      border-right: 1px solid rgb(180, 180, 180);
+      left: 0;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .output-r{
+      position: absolute;
+      width: 50%;
+      height: 90%;
+      right: 0;
+      padding: 20px;
+      overflow-y: auto;
+    }
     
 
 }
