@@ -13,7 +13,7 @@ from selenium.webdriver.common.keys import Keys
 def index(request):
 
     context ={
-      'judul':'hoax detecteren',
+      'judul':'hoax detection',
       'webby':'Athalla rafly',
       'webname': 'hoax detecteren',
     }
@@ -77,8 +77,11 @@ def index(request):
         news_data = driver.find_elements_by_xpath("//body")
         time.sleep(2)
 
+        # news = []
+
         with open('news.txt', "a") as news_file:
-            for el in news_data:                 
+            for el in news_data:
+                # news.append(el.text)                 
                 news_file.write(el.text+"\n")
                 time.sleep(1)
                 break
@@ -111,8 +114,12 @@ def index(request):
         os.remove('news.txt')
         os.remove('text.txt')
 
+        str1 = " "
+
         return render(request, 'index.html', {
             'Score_by_different': strscore,
+            'text_inp': data1,
+            'result': data2,
             'judul':'hoax detecteren',
             'webby':'Athalla rafly',
             'webname': 'hoax detecteren',
