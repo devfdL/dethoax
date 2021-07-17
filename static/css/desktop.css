@@ -58,14 +58,29 @@
 
     .topbar{
       position: fixed;
-      top: 0;
-      left: 0;
+      top: 40px;
+      left: 5vw;
       /* box-shadow: 1px 1px 10px #20202077; */
-      width: 100vw;
+      width: 90vw;
       padding-left: 30px;
       padding-right: 30px;
       height: 50px; 
-      z-index: 99999999999;   
+      z-index: 99999999999; 
+      border-radius: 20px;
+      background-color: white;  
+    }
+
+    .topbar a{
+      /* position: absolute;;
+      top: 10px;
+      left: 270px; */
+      font-size: 20px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .topbar a:hover{
+      font-weight: bolder;
     }
 
     #judul{
@@ -136,20 +151,81 @@
       height: 100vh;
       top: 0;
       left: 0;
+    }
+
+    .cntn-bg{
+      position: fixed;
+      width: 98vw;
+      height: 90vh;
+      border-radius: 50px;
+      background-color: #4d69fa;
+      top: 20px;
+      left: 1vw;
       overflow-y: auto;
+      overflow-x: hidden;
     }
 
     .cntn-l{
       position: relative;
-      width: 40vw;
+      width: 60%;
       height: 50vh;
-      top: 25vh;
-      left: 5vw;
+      top: 15vh;
+      left: 20%;
       padding: 20px;
+      text-align: center;
+      color: white;
     }
 
     .cntn-l h1{
       font-size: 70px;
+    }
+
+    #drop{
+      position: relative;
+      top: 50px;
+      left: 50%;
+      margin-top: -100px;
+      margin-left: -250px;
+      width: 500px;
+      height: 200px;
+      border: 4px dashed #fff;
+    }
+    #drop p{
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      line-height: 170px;
+      color: #ffffff;
+      font-family: Arial;
+    }
+    #drop input{
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      outline: none;
+      opacity: 0;
+    }
+    #drop button{
+      position: relative;
+      left: -5px;
+      margin: 0;
+      color: #fff;
+      background: black;
+      border: none;
+      width: 508px;
+      height: 35px;
+      border-radius: 4px;
+      transition: all .2s ease;
+      outline: none;
+    }
+    #drop button:hover{
+      background: white;
+      color: #0C5645;
+    }
+    #drop button:active{
+      border:0;
     }
 
     .output{
@@ -158,7 +234,9 @@
       height: 70vh;
       top: 15vh;
       left: 5vw;
-      box-shadow: 1px 1px 10px #20202077;
+      background-color: white;
+      border-radius: 20px;
+      /* box-shadow: 1px 1px 10px #20202077; */
     }
 
     #scr_dif{
@@ -185,6 +263,39 @@
       right: 0;
       padding: 20px;
       overflow-y: auto;
+    }
+
+    #cntn-bg-h1{
+      position: relative;
+      top: 200px;
+      left: 5vw;
+      color: white;
+    }
+
+    #cntn-bg-p{
+      position: relative;
+      top: 200px;
+      left: 5vw;
+      width: 40%;
+      color: white;
+    }
+
+    #cntn-bg-a{
+      position: relative;
+      top: 240px;
+      left: 5vw;
+      color: white;
+      text-decoration: none;
+      padding: 10px 60px;
+      background-color: black;
+    }
+
+
+    #cntn-bg-a:hover{
+      border: 2px solid black;
+      background-color: transparent;
+      color: black;
+      font-weight: bolder;
     }
     
 
