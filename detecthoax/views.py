@@ -10,8 +10,20 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
+
 def index(request):
 
+    context ={
+      'judul':'hoax detection',
+      'webby':'Athalla rafly',
+      'webname': 'hoax detecteren',
+    }
+
+    return render(request, 'index.html', context)
+
+
+def Hoax(request):
+    
     context ={
       'judul':'hoax detection',
       'webby':'Athalla rafly',
@@ -27,7 +39,7 @@ def index(request):
         img_dir = uploaded_file_url
         time.sleep(10)
         imgdr = img_dir[1:]
-
+        #print(imgdr)
         # gambar ke teks
         image = cv2.imread(imgdr)
         while True:
@@ -47,13 +59,13 @@ def index(request):
             f.write(text)
 
             # show the output images
-            cv2.imshow("Image", image)
+            #cv2.imshow("Image", image)
             #cv2.imshow("Output", gray)
 
             if len(text) > 1:
                 break
 
-        cv2.destroyAllWindows()
+        #cv2.destroyAllWindows()
 
         # mencari berita 
         f = open('text.txt', "r")
@@ -126,4 +138,4 @@ def index(request):
         })
       
 
-    return render(request, 'index.html', context)
+    return render(request, 'hoax.html', context)
